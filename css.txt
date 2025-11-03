@@ -1,0 +1,34 @@
+css:
+Selectors:the rules used to “select” HTML elements and apply styles to them.
+selectors are applicable only for internal and external
+if we want to give colour to only one para so we use selectors
+Simple Selector:
+	id(#),class(.),universal(*),element(p)(h5)
+	1.id is unique values
+	2.class is for multiple tags we can use
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #para1{
+            color: red;
+            background-color: green;
+
+        }
+        .main{
+            color:green;
+            background-color:yellow;
+        }
+    </style>
+</head>
+<body>
+    <p id="para1">i am para 1</p>
+    <p id="para2">i am para 2</p>
+    <p class="main">i am para 3</p>
+    <p class="main">i am para 4</p>
+    <p> i am para 5</p>
+</body>
+</html>

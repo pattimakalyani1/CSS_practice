@@ -1,0 +1,302 @@
+css:
+Selectors:the rules used to “select” HTML elements and apply styles to them.
+selectors are applicable only for internal and external
+if we want to give colour to only one para so we use selectors
+Simple Selector:
+	id(#),class(.),universal(*),element(p)(h5)
+	1.id is unique values
+	2.class is for multiple tags we can use
+	3.element
+	4.universal
+	
+priority:
+	id>class>element
+
+id:
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #para1{
+            color: red;
+            background-color: green;
+
+        }	
+    </style>
+</head>
+<body>
+    <p id="para1">i am para 1</p>
+    <p id="para2">i am para 2</p>
+    <p class="main">i am para 3</p>
+    <p class="main">i am para 4</p>
+    <p> i am para 5</p>
+</body>
+</html>
+
+
+class:
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            color:green;
+            background-color:yellow;
+        }
+	
+    </style>
+</head>
+<body>
+    <p id="para1">i am para 1</p>
+    <p id="para2">i am para 2</p>
+    <p class="main">i am para 3</p>
+    <p class="main">i am para 4</p>
+    <p> i am para 5</p>
+</body>
+</html>
+
+
+element:
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       p{
+            color: red;
+            background-color: green;
+
+        }	
+    </style>
+</head>
+<body>
+    <p id="para1">i am para 1</p>
+    <p id="para2">i am para 2</p>
+    <p class="main">i am para 3</p>
+    <p class="main">i am para 4</p>
+    <p> i am para 5</p>
+</body>
+</html>
+
+
+universal:
+
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+            color: red;
+            background-color: green;
+
+        }	
+    </style>
+</head>
+<body>
+    <p id="para1">i am para 1</p>
+    <p id="para2">i am para 2</p>
+    <p class="main">i am para 3</p>
+    <p class="main">i am para 4</p>
+    <p> i am para 5</p>
+</body>
+</html>
+
+
+
+
+
+29/10/25:combinators selectors
+
+child selector(>):only childs will apply(all elements (only childs but not sub childs)).
+    direct chil elements 
+eg:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*.main p{
+            color: green;
+            background-color: yellow;
+            
+        }*/
+        /*div{
+            color: green;
+            background-color: yellow;
+            
+        }*/
+        .main>p{
+            color: green;
+            background-color:yellow;
+            border: 2px solid black;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p>i am para1</p>
+        <p>i am para 2</p>
+        <p>i am para 3</p>
+	<h1>hello</h1>
+        <p>i am para 4</p>
+        <div>
+            <p>i am para 5</p>
+        </div>
+    </div>
+    <p>i am para 6</p>
+    <p>i am para 7</p>
+    <p>i am para 8</p>
+    <h1>
+        i am heading
+    </h1>
+</body>
+</html>
+
+
+
+Descendent selector(space) :child and subchilds in a container(all the elements ina container including subchilds)
+eg:<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main p{
+            color: green;
+            background-color: yellow;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p>i am para1</p>
+        <p>i am para 2</p>
+        <p>i am para 3</p>
+	<h1>hello</h1>
+        <p>i am para 4</p>
+        <div>
+            <p>i am para 5</p>
+        </div>
+    </div>
+    <p>i am para 6</p>
+    <p>i am para 7</p>
+    <p>i am para 8</p>
+    <h1>
+        i am heading
+    </h1>
+</body>
+</html>
+
+
+
+General subling selector(~) :existing elements out side the container(all tags/elements)
+eg:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*.main p{
+            color: green;
+            background-color: yellow;
+            
+        }*/
+        /*div{
+            color: green;
+            background-color: yellow;
+            
+        }*/
+        .main~p{
+            color: green;
+            background-color:yellow;
+            border: 2px solid black;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p>i am para1</p>
+        <p>i am para 2</p>
+        <p>i am para 3</p>
+        <p>i am para 4</p>
+        <div>
+            <p>i am para 5</p>
+        </div>
+    </div>
+    <p>i am para 6</p>
+    <p>i am para 7</p>
+    <h1>
+        i am heading
+    </h1>
+    <p>i am para 8</p>
+    
+</body>
+</html>
+
+
+
+Adjacent sibling selector(+): style to next tag after the container(only one element).
+eg:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*.main p{
+            color: green;
+            background-color: yellow;
+            
+        }*/
+        /*div{
+            color: green;
+            background-color: yellow;
+            
+        }*/
+        .main+p{
+            color: green;
+            background-color:yellow;
+            border: 2px solid black;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p>i am para1</p>
+        <p>i am para 2</p>
+        <p>i am para 3</p>
+        <p>i am para 4</p>
+        <div>
+            <p>i am para 5</p>
+        </div>
+    </div>
+    <p>i am para 6</p>
+    <p>i am para 7</p>
+    <h1>
+        i am heading
+    </h1>
+    <p>i am para 8</p>
+    
+</body>
+</html>
